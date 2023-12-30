@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>XENZA DIGITAL GROUP</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('bg.jpg') no-repeat center center fixed; /* Ganti path/to/your/image.jpg dengan path gambar Anda */
+            background-size: cover;
+            color: #fff;
+        }
+
+        header {
+            background-color: #b3ffb3; /* Warna biru tua untuk header */
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        article {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        article ul {
+            list-style-type: disc; /* Menggunakan titik bulat */
+            margin-left: 20px; /* Memberikan indentasi pada daftar */
+        }
+
+        footer {
+            background-color: #b3ffb3; /* Warna biru tua untuk footer */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #prayerTime {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p>&copy; 2023 XENZA DIGITAL GROUP. All rights reserved. | 
+            <a href="mailto:xenzadigital@gmail.com">Bantuan</a>
+        </p>
+    <script>
+        // Ganti "YOUR_API_KEY" dengan API Key yang Anda dapatkan dari Aladhan
+        const apiKey = 'YOUR_API_KEY';
+    
+        // Mendapatkan waktu sholat untuk lokasi tertentu (contoh: Jakarta)
+        const city = 'Jakarta';
+        const country = 'Indonesia';
+    
+        const apiUrl = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2&school=1&apikey=${apiKey}`;
+    
+        // Mendapatkan data waktu sholat dari API
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const prayerTimes = data.data.timings;
+    
+                // Menampilkan waktu sholat pada elemen dengan id "prayerTime"
+                document.getElementById('prayerTime').innerHTML = `
+                    <h3>Waktu Sholat di ${city}, ${country}</h3>
+                    <p>Fajr: ${prayerTimes.Fajr}</p>
+                    <p>Dhuhr: ${prayerTimes.Dhuhr}</p>
+                    <p>Asr: ${prayerTimes.Asr}</p>
+                    <p>Maghrib: ${prayerTimes.Maghrib}</p>
+                    <p>Isha: ${prayerTimes.Isha}</p>
+                `;
+            })
+            .catch(error => console.error('Error fetching prayer time:', error));
+    </script>
+    </header>
+    <article>
+        <h2>XENZA DIGITAL ADALAH PERUSAHAAN YANG BERGERTAK PADA BIDANG DIGITAL</h2>
+        <ul>
+            <p>Perusahaan digital merupakan entitas bisnis yang secara utama beroperasi di ranah online dan mengintegrasikan 
+                teknologi informasi dalam setiap aspek operasionalnya.</p>
+        <h3>Kami bergerak pada bidang</h3>
+                <li>XDG JUAL BELI (akun game) </li>
+                <li>XDG TOP UP (E-Wallet, Vocher game, Pulsa) </li>
+                <li>XDG JASA (Jasa admin, Jasa CS) </li>
+                <li>XDG INVESTASI (Jasa membantu untuk memberikan produk reksadana terbaik)</li>
+        </ul>
+    </article>
+    <article>
+        <h1>AYO BERGABUNG BERSAMA KAMI</h1>
+        <p>Kamu bisa mengikuti kegiatan magang atau bekerja dengan kami. Dan kamu juga bisa mengikuti kegiatan magang atau kerja 
+            WFH atau WFO, ini sangat cocok jika kamu masih mahasiswa, tamatan SMA, maupun lulus S1
+        </p>
+        <p> Untuk pendaftaran silahkan klik pada kolom di bawah</p>
+    </article>
+
+    <div class="container">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeB_RoUOXaIE7v7-eV7T_2ujVwPdeSVwT0FP7mREGCMAZ9vjg/viewform?usp=sharing" class="box">Daftar Magang</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf9YVipvgT3sBQHBEa-qlnpB1Z4A4MB5UwAKATJuZd4Xx_z1g/viewform?usp=sharing" class="box">Daftar Kerja</a>
+    </div>
+    
+    <footer>
+        <div id="prayerTime"></div>
+        <p>&copy; 2023 XENZA DIGITAL GROUP. All rights reserved.

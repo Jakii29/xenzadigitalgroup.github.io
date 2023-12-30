@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00ff91; /* Warna hijau muda */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.box, article {
+    text-decoration: none;
+    color: #fff;
+    background-color: #add8e6; /* Warna biru muda */
+    padding: 20px;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.box:hover, article:hover {
+    background-color: #87ceeb; /* Warna biru muda yang sedikit lebih tua saat dihover */
+}
+
+article {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #00ff91; /* Warna hijau muda untuk footer */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
